@@ -15,7 +15,7 @@ experiences:
   title: "Junior Machine Learning Engineer"
   category: "work"
 
-- place: "Computational Neuroscience Imbizo"
+- place: "ISCN Imbizo"
   time: "Apr. 2022 - May 2022"
   title: "Summer School Student"
   subtitle: "Computational Neuroscience and Machine Learning"
@@ -27,9 +27,15 @@ experiences:
   subtitle: "Engineering (Biomedical)"
   category: "school"
 
+- place: "University of Ghana"
+  time: "Dec. 2022 - Mar. 2023"
+  title: "Research Intern"
+  subtitle: "Advisor: <a href='https://www.ug.edu.gh/biomed-eng/staff/samuel-kojo-kwofie-bsc-kumasi-msc-uct-phd-uwc'  style='text-decoration: none;'>Prof Samuel K Kwofie</a>"
+  category: "work"
+
 - place: "ReachSci Mini Ph.D. Programme"
   time: "Dec. 2022 - Mar. 2023"
-  # title: "ReachSci Mini Ph.D. Programme"
+  subtitle: "Advisor: <a href='https://www.ug.edu.gh/biomed-eng/staff/elsie-b-effah-kaufmann-bse-mse-phd-pennsylvania'  style='text-decoration: none;'>Prof Elsie E Kaufmann</a>"
   category: "school"
 
 # - place: "Staffordshire University"

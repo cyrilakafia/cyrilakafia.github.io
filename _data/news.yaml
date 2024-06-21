@@ -1,37 +1,37 @@
 
 news:
-  - content: '<b>Apr., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">Briefings in Bioinformatics 2024</b>.'
+  - content: '<b>Jun., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; I presented a poster at <b style="color:#fa8072;">BRAIN Initiative Conference 2024</b>.'
     year: "2024"
 
-  - content: '<b>Apr., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">WWW 2024 Workshop on Data-centric Artificial Intelligence (DCAI)</b>.'
-    year: "2024"
+  # - content: '<b>Apr., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">WWW 2024 Workshop on Data-centric Artificial Intelligence (DCAI)</b>.'
+  #   year: "2024"
 
-  - content: '<b>Mar., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; I will be joining <b>UNITES Lab@UNC Chapel Hill</b> this Fall as a Ph.D. Student!'
-    year: "2024"
+  # - content: '<b>Mar., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; I will be joining <b>UNITES Lab@UNC Chapel Hill</b> this Fall as a Ph.D. Student!'
+  #   year: "2024"
 
-  - content: '<b>Jan., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">PAKDD 2024</b>.'
-    year: "2024"
+  # - content: '<b>Jan., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">PAKDD 2024</b>.'
+  #   year: "2024"
 
-  - content: "<b>Oct., 2023</b>&nbsp;&nbsp;&nbsp;&nbsp; I served as a session chair in the Knowledge Representation 3 session at <b>CIKM 2023</b>."
-    year: "2023"
+  # - content: "<b>Oct., 2023</b>&nbsp;&nbsp;&nbsp;&nbsp; I served as a session chair in the Knowledge Representation 3 session at <b>CIKM 2023</b>."
+  #   year: "2023"
 
-  - content: '<b>Aug., 2023</b>&nbsp;&nbsp;&nbsp;&nbsp; Two papers got accepted at <b style="color:#fa8072;">CIKM 2023</b>.'
-    year: "2023"
+  # - content: '<b>Aug., 2023</b>&nbsp;&nbsp;&nbsp;&nbsp; Two papers got accepted at <b style="color:#fa8072;">CIKM 2023</b>.'
+  #   year: "2023"
 
-  - content: '<b>Jul., 2023</b>&nbsp;&nbsp;&nbsp;&nbsp; Our paper, “Single-cell RNA-seq data imputation using Feature Propagation” won the <b style="color:#FF0000;">Best Paper Award</b> at <b style="color:#fa8072;">ICML 2023 Workshop on Computational Biology</b>!'
-    year: "2023"
+  # - content: '<b>Jul., 2023</b>&nbsp;&nbsp;&nbsp;&nbsp; Our paper, “Single-cell RNA-seq data imputation using Feature Propagation” won the <b style="color:#FF0000;">Best Paper Award</b> at <b style="color:#fa8072;">ICML 2023 Workshop on Computational Biology</b>!'
+  #   year: "2023"
 
-  - content: '<b>Jun., 2023</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted for a <b>contributed talk</b> at <b style="color:#fa8072;">ICML 2023 Workshop on Computational Biology</b>. Excited to give a talk at Honolulu, Hawai’i!'
-    year: "2023"
+  # - content: '<b>Jun., 2023</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted for a <b>contributed talk</b> at <b style="color:#fa8072;">ICML 2023 Workshop on Computational Biology</b>. Excited to give a talk at Honolulu, Hawai’i!'
+  #   year: "2023"
   
-  - content: '<b>Apr., 2023</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">SIGIR 2023</b>.'
-    year: "2023"
+  # - content: '<b>Apr., 2023</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">SIGIR 2023</b>.'
+  #   year: "2023"
 
-  - content: '<b>Aug., 2022</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">CIKM 2022</b>.'
-    year: "2023"
+  # - content: '<b>Aug., 2022</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">CIKM 2022</b>.'
+  #   year: "2023"
 
-  - content: '<b>Jul., 2022</b>&nbsp;&nbsp;&nbsp;&nbsp; I will be joining <b>Tokyo Tech</b> this Fall-Winter as a visting researcher under supervision of <b>Prof. Tsuyoshi Murata</b>. Looking forward to it!'
-    year: "2023"
+  # - content: '<b>Jul., 2022</b>&nbsp;&nbsp;&nbsp;&nbsp; I will be joining <b>Tokyo Tech</b> this Fall-Winter as a visting researcher under supervision of <b>Prof. Tsuyoshi Murata</b>. Looking forward to it!'
+  #   year: "2023"
 
-  - content: '<b>Aug., 2021</b>&nbsp;&nbsp;&nbsp;&nbsp; I joined <b>DSAIL@KAIST</b> as a Master Student!'
-    year: "2023"
+  # - content: '<b>Aug., 2021</b>&nbsp;&nbsp;&nbsp;&nbsp; I joined <b>DSAIL@KAIST</b> as a Master Student!'
+  #   year: "2023"
