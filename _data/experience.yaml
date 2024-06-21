@@ -15,7 +15,7 @@ experiences:
   title: "Junior Machine Learning Engineer"
   category: "work"
 
-- place: "IBRO-SIMONS Computational Neuroscience Imbizo"
+- place: "Computational Neuroscience Imbizo"
   time: "Apr. 2022 - May 2022"
   title: "Summer School Student"
   subtitle: "Computational Neuroscience and Machine Learning"
@@ -27,9 +27,9 @@ experiences:
   subtitle: "Engineering (Biomedical)"
   category: "school"
 
-- place: "ReachSci Mini Ph.D. Programme Online"
+- place: "ReachSci Mini Ph.D. Programme"
   time: "Dec. 2022 - Mar. 2023"
-  title: "ReachSci Mini Ph.D. Programme"
+  # title: "ReachSci Mini Ph.D. Programme"
   category: "school"
 
 # - place: "Staffordshire University"
