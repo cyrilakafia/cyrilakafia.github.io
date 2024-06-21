@@ -1,0 +1,37 @@
+experiences:  
+- place: "UNC Chapel Hill"
+  time: "Aug. 2024 - "
+  title: "Ph.D. Student in Computer Science"
+  subtitle: "Advisor: <a href='https://tianlong-chen.github.io/'  style='text-decoration: none;'>Prof. Tianlong Chen</a>"
+  category: "school"
+
+- place: "KAIST"
+  time: "Mar. 2021 - Aug. 2023"
+  title: "M.S. in Industrial & Systems Engineering"
+  subtitle: "Advisor: <a href='https://dsail.kaist.ac.kr/professor/'  style='text-decoration: none;'>Prof. Chanyoung Park</a>"
+  category: "school"
+
+- place: "Tokyo Tech"
+  time: "Oct. 2022 - Feb. 2023"
+  title: "Visting Researcher at Dept. of Computer Science"
+  subtitle: "Host: <a href='http://www.net.c.titech.ac.jp/murata.html'  style='text-decoration: none;'>Prof. Tsuyoshi Murata</a>"
+  category: "work"
+
+- place: "ReachSci Mini Ph.D. Programme"
+  time: "Dec. 2022 - Mar. 2023"
+  title: "ReachSci Mini Ph.D. Programme"
+  subtitle: "Summa Cum Laude"
+  category: "work"
+
+- place: "ReachSci Mini Ph.D. Programme"
+  time: "Dec. 2022 - Mar. 2023"
+  title: "ReachSci Mini Ph.D. Programme"
+  subtitle: "Summa Cum Laude"
+  category: "work"
+  
+# - place: "Staffordshire University"
+#   time: "2007 - 2010"
+#   title: "B.Sc. Student"
+#   subtitle: "Computing Science <br/> First Class Honours"
+#   category: "school"
+    
