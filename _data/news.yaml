@@ -1,13 +1,25 @@
 
 news:
-  - content: '<b>Jun., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; I presented a poster at <b style="color:#fa8072;">BRAIN Initiative Conference 2024</b>.'
+  - content: '<b>Jun., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; Our <b style="color:#fa8072;">NeuroAI<b> workshop was accepted and will be held at the Deep Learning Indaba 2024 Conference.'
+    year: "2024"
+  
+  - content: '<b>Jun., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; I presented a <a href="https://drive.google.com/file/d/1OJOAezfoPZkzhAX67drh5Yc2dshjOcJE/view">poster<a>, A non-parametric and state-space approach for clustering diverse neuronal responses into functional ensembles reveals interpretable population dynamics <b style="color:#fa8072;">BRAIN Initiative Conference 2024</b>. '
     year: "2024"
 
-  # - content: '<b>Apr., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">WWW 2024 Workshop on Data-centric Artificial Intelligence (DCAI)</b>.'
-  #   year: "2024"
+  - content: '<b>Nov., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; I will be joining <b>AZA Lab@Yale University</b> this Fall as a Postgraduate Research Associate'
+    year: "2024"
 
-  # - content: '<b>Mar., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; I will be joining <b>UNITES Lab@UNC Chapel Hill</b> this Fall as a Ph.D. Student!'
-  #   year: "2024"
+  - content: '<b>May., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">ICML 2023 Workshop on Data-centric Machine Learning Research (DCML)</b>.'
+    year: "2023"
+
+  - content: '<b>Mar., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; I will be participating in the <b>Computation Neuroscience Imbizo in Cape Town, South Africa</b>'
+    year: "2023"
+
+  - content: '<b>Oct., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; I will be joining <b>The AI team@MinoHealth AI Labs and KaraAgro AI</b> as a Junior Machine Learning Engineer'
+    year: "2022"
+
+
+  
 
   # - content: '<b>Jan., 2024</b>&nbsp;&nbsp;&nbsp;&nbsp; A paper got accepted at <b style="color:#fa8072;">PAKDD 2024</b>.'
   #   year: "2024"
