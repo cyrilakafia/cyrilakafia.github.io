@@ -13,7 +13,7 @@ papers:
 
   - title: "Localized Data Work as a Precondition for Data-Centric ML: A Case Study of Full Lifecycle Crop Disease Identification in Ghana"
     authors: "Darlington Akogo, Issah Samori, <b>Cyril Akafia</b>, Harriet Fiagbor, Andrews Kangah, Donald Kwame Asiedu, Kwabena Fuachie, Luis Oala"
-    venue: "ICML 2024 Workshop on Data-centric Artificial Intelligence (DCAI)"
+    venue: "Data-centric Machine Learning Research (DMLR) Workshop at ICML 2023"
     paper_pdf: "https://arxiv.org/abs/2307.01767"
     # code: "https://github.com/TaiHasegawa/DEGNN"
     year: "2023"
