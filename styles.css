@@ -10,7 +10,6 @@
   --surface-muted: #f8f8f8;
   --shadow: rgba(0, 0, 0, 0.15);
   --timeline: rgb(80, 80, 80);
-  --theme-toggle-text: #111;
 }
 
 html {
@@ -31,7 +30,6 @@ html[data-theme="dark"] {
   --surface-muted: #1d252e;
   --shadow: rgba(0, 0, 0, 0.38);
   --timeline: rgba(200, 214, 226, 0.78);
-  --theme-toggle-text: #eef2f6;
 }
 
 body {
@@ -80,23 +78,37 @@ h2 {
   padding-top: 20px;
 }
 
-.theme-toggle {
-  min-width: 110px;
-  padding: 8px 14px;
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   background: var(--surface);
-  color: var(--theme-toggle-text);
+}
+
+.theme-option {
+  min-width: 0;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
   font: inherit;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.theme-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+.theme-option:hover {
+  color: var(--text);
+}
+
+.theme-option.is-active {
+  background: var(--surface-muted);
+  color: var(--text);
   transform: translateY(-1px);
 }
 
@@ -510,6 +522,67 @@ h2 {
   }
 }
 
+@media (max-width: 860px), (pointer: coarse) {
+  .timeline {
+    width: 100%;
+    padding: 1.2em 0 0.5em;
+  }
+
+  .timeline::before {
+    left: 22px;
+  }
+
+  .timeline li {
+    padding: 0 0 1.8em;
+  }
+
+  .direction-l,
+  .direction-r {
+    float: none;
+    width: 100%;
+    padding-left: 54px;
+    text-align: left;
+  }
+
+  .direction-l .flag-wrapper,
+  .direction-r .flag-wrapper {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .direction-l .flag::before,
+  .direction-r .flag::before {
+    top: 14px;
+    left: -43px;
+    right: auto;
+    margin-left: 0;
+    border-color: var(--timeline);
+  }
+
+  .direction-l .flag::after,
+  .direction-r .flag::after {
+    display: none;
+  }
+
+  .time-wrapper,
+  .direction-l .time-wrapper,
+  .direction-r .time-wrapper {
+    display: block;
+    margin-top: 0;
+  }
+
+  .desc,
+  .direction-r .desc {
+    margin: 0.65em 0 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  .desc a {
+    overflow-wrap: anywhere;
+  }
+}
+
 @media (max-width: 660px) {
   h2 {
     font-size: 1.9rem;
@@ -546,61 +619,61 @@ h2 {
 
   .timeline {
     width: 100%;
-    padding: 4em 0 1em;
+    padding: 1.2em 0 0.5em;
   }
 
   .timeline::before {
-    left: 50%;
+    left: 22px;
   }
 
   .timeline li {
-    padding: 2em 0;
+    padding: 0 0 1.8em;
   }
 
   .direction-l,
   .direction-r {
     float: none;
     width: 100%;
-    text-align: center;
+    padding-left: 54px;
+    text-align: left;
   }
 
-  .flag {
-    background: var(--surface);
-    z-index: 15;
+  .direction-l .flag-wrapper,
+  .direction-r .flag-wrapper {
+    align-items: flex-start;
+    text-align: left;
   }
 
   .direction-l .flag::before,
   .direction-r .flag::before {
-    top: -30px;
-    left: 50%;
+    top: 14px;
+    left: -43px;
     right: auto;
-    margin-left: -9px;
+    margin-left: 0;
     border-color: var(--timeline);
   }
 
   .direction-l .flag::after,
   .direction-r .flag::after {
-    left: 50%;
-    right: auto;
-    top: -8px;
-    margin-left: -8px;
-    border: solid transparent;
-    border-bottom-color: var(--surface);
-    border-width: 8px;
+    display: none;
   }
 
   .time-wrapper,
   .direction-l .time-wrapper,
   .direction-r .time-wrapper {
-    float: none;
     display: block;
-    margin-top: 8px;
+    margin-top: 0;
   }
 
   .desc,
   .direction-r .desc {
-    margin: 1em 0 0;
-    padding: 0 14px;
+    margin: 0.65em 0 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  .desc a {
+    overflow-wrap: anywhere;
   }
 }
 
@@ -609,10 +682,13 @@ h2 {
     padding: 0 14px 26px;
   }
 
-  .theme-toggle {
-    min-width: 98px;
-    padding: 7px 12px;
-    font-size: 0.9rem;
+  .site-actions {
+    justify-content: center;
+  }
+
+  .theme-option {
+    padding: 7px 10px;
+    font-size: 0.88rem;
   }
 
   .intro-column h1 {

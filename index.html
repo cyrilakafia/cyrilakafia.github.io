@@ -9,16 +9,27 @@
   <meta name="theme-color" content="#ffffff">
   <script>
     (() => {
+      const resolveTheme = (choice, prefersDark) => {
+        if (choice === "light" || choice === "dark") {
+          return choice;
+        }
+
+        return prefersDark ? "dark" : "light";
+      };
+
       try {
         const storedTheme = localStorage.getItem("theme");
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const theme = storedTheme || (prefersDark ? "dark" : "light");
+        const themeChoice = ["light", "dark", "system"].includes(storedTheme) ? storedTheme : "system";
+        const theme = resolveTheme(themeChoice, prefersDark);
+        document.documentElement.dataset.themeChoice = themeChoice;
         document.documentElement.dataset.theme = theme;
         const themeMeta = document.querySelector('meta[name="theme-color"]');
         if (themeMeta) {
           themeMeta.setAttribute("content", theme === "dark" ? "#0f1419" : "#ffffff");
         }
       } catch (error) {
+        document.documentElement.dataset.themeChoice = "system";
         document.documentElement.dataset.theme = "light";
       }
     })();
@@ -34,7 +45,11 @@
 <body>
   <div class="site-container">
     <div class="site-actions">
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+      <div class="theme-switcher" role="group" aria-label="Color theme">
+        <button class="theme-option" data-theme-choice="light" type="button" aria-pressed="false">Light</button>
+        <button class="theme-option" data-theme-choice="dark" type="button" aria-pressed="false">Dark</button>
+        <button class="theme-option" data-theme-choice="system" type="button" aria-pressed="false">System</button>
+      </div>
     </div>
     <header class="site-header">
       <div class="header-grid">

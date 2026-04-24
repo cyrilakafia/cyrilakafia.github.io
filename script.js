@@ -1,63 +1,71 @@
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.documentElement;
-  const themeToggle = document.querySelector("#theme-toggle");
+  const themeOptions = Array.from(document.querySelectorAll(".theme-option"));
   const themeMeta = document.querySelector('meta[name="theme-color"]');
   const tabGroups = document.querySelectorAll(".tabs");
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const validThemeChoices = new Set(["light", "dark", "system"]);
 
-  const getPreferredTheme = () => {
+  const getSavedThemeChoice = () => {
     try {
       const savedTheme = localStorage.getItem("theme");
-      if (savedTheme === "dark" || savedTheme === "light") {
+      if (validThemeChoices.has(savedTheme)) {
         return savedTheme;
       }
     } catch (error) {
-      return mediaQuery.matches ? "dark" : "light";
+      return "system";
+    }
+
+    return "system";
+  };
+
+  const resolveTheme = (themeChoice) => {
+    if (themeChoice === "light" || themeChoice === "dark") {
+      return themeChoice;
     }
 
     return mediaQuery.matches ? "dark" : "light";
   };
 
-  const applyTheme = (theme) => {
-    root.dataset.theme = theme;
+  const applyThemeChoice = (themeChoice) => {
+    const choice = validThemeChoices.has(themeChoice) ? themeChoice : "system";
+    const resolvedTheme = resolveTheme(choice);
+    root.dataset.themeChoice = choice;
+    root.dataset.theme = resolvedTheme;
 
-    if (themeToggle) {
-      const nextLabel = theme === "dark" ? "Light mode" : "Dark mode";
-      themeToggle.textContent = nextLabel;
-      themeToggle.setAttribute("aria-label", `Switch to ${nextLabel.toLowerCase()}`);
-      themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
-    }
+    themeOptions.forEach((button) => {
+      const isActive = button.dataset.themeChoice === choice;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
 
     if (themeMeta) {
-      themeMeta.setAttribute("content", theme === "dark" ? "#0f1419" : "#ffffff");
+      themeMeta.setAttribute("content", resolvedTheme === "dark" ? "#0f1419" : "#ffffff");
     }
   };
 
-  applyTheme(getPreferredTheme());
+  applyThemeChoice(getSavedThemeChoice());
 
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-      applyTheme(nextTheme);
+  themeOptions.forEach((button) => {
+    button.addEventListener("click", () => {
+      const themeChoice = button.dataset.themeChoice;
+      applyThemeChoice(themeChoice);
 
       try {
-        localStorage.setItem("theme", nextTheme);
+        localStorage.setItem("theme", themeChoice);
       } catch (error) {
         // Ignore storage failures and keep the current session theme.
       }
     });
-  }
+  });
 
   const handleSystemThemeChange = (event) => {
-    try {
-      if (localStorage.getItem("theme")) {
-        return;
-      }
-    } catch (error) {
-      // Fall through and update from system preference.
+    const currentChoice = root.dataset.themeChoice || "system";
+    if (currentChoice !== "system") {
+      return;
     }
 
-    applyTheme(event.matches ? "dark" : "light");
+    applyThemeChoice("system");
   };
 
   if (typeof mediaQuery.addEventListener === "function") {
