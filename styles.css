@@ -17,6 +17,12 @@ html {
   color-scheme: light;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html[data-theme="dark"] {
   color-scheme: dark;
   --text: #eef2f6;
@@ -43,6 +49,12 @@ body {
 
 a {
   color: inherit;
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
 img {
@@ -86,11 +98,12 @@ h2 {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   background: var(--surface);
+  line-height: 1;
 }
 
 .theme-option {
-  min-width: 0;
-  padding: 7px 12px;
+  min-width: 64px;
+  padding: 8px 12px;
   border: none;
   border-radius: 999px;
   background: transparent;
@@ -98,8 +111,21 @@ h2 {
   font: inherit;
   font-size: 0.95rem;
   font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.theme-option:focus {
+  outline: none;
+}
+
+.theme-option:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .theme-option:hover {
@@ -109,7 +135,7 @@ h2 {
 .theme-option.is-active {
   background: var(--surface-muted);
   color: var(--text);
-  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px var(--line-strong);
 }
 
 .site-header {
@@ -210,6 +236,8 @@ h2 {
 }
 
 .button {
+  -webkit-appearance: none;
+  appearance: none;
   display: inline-block;
   height: 32px;
   padding: 0 18px;
@@ -379,8 +407,8 @@ h2 {
   right: -40px;
   content: " ";
   display: block;
-  width: 12px;
-  height: 12px;
+  width: 20px;
+  height: 20px;
   margin-top: -10px;
   background: var(--surface);
   border-radius: 10px;
@@ -524,23 +552,43 @@ h2 {
 
 @media (max-width: 860px), (pointer: coarse) {
   .timeline {
+    --mobile-timeline-axis: 11px;
     width: 100%;
-    padding: 1.2em 0 0.5em;
+    margin-top: 24px;
+    padding: 0;
   }
 
   .timeline::before {
-    left: 22px;
+    left: var(--mobile-timeline-axis);
+    width: 2px;
+    margin-left: 0;
+    transform: translateX(-50%);
   }
 
   .timeline li {
-    padding: 0 0 1.8em;
+    position: relative;
+    padding: 0 0 1.8em 36px;
+  }
+
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: var(--mobile-timeline-axis);
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    border: 4px solid var(--timeline);
+    border-radius: 999px;
+    background: var(--background);
+    transform: translateX(-50%);
+    z-index: 10;
   }
 
   .direction-l,
   .direction-r {
     float: none;
     width: 100%;
-    padding-left: 54px;
+    padding-left: 0;
     text-align: left;
   }
 
@@ -552,16 +600,17 @@ h2 {
 
   .direction-l .flag::before,
   .direction-r .flag::before {
-    top: 14px;
-    left: -43px;
-    right: auto;
-    margin-left: 0;
-    border-color: var(--timeline);
+    display: none;
   }
 
   .direction-l .flag::after,
   .direction-r .flag::after {
     display: none;
+  }
+
+  .flag {
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 
   .time-wrapper,
@@ -616,65 +665,6 @@ h2 {
     white-space: nowrap;
     padding: 0 14px;
   }
-
-  .timeline {
-    width: 100%;
-    padding: 1.2em 0 0.5em;
-  }
-
-  .timeline::before {
-    left: 22px;
-  }
-
-  .timeline li {
-    padding: 0 0 1.8em;
-  }
-
-  .direction-l,
-  .direction-r {
-    float: none;
-    width: 100%;
-    padding-left: 54px;
-    text-align: left;
-  }
-
-  .direction-l .flag-wrapper,
-  .direction-r .flag-wrapper {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .direction-l .flag::before,
-  .direction-r .flag::before {
-    top: 14px;
-    left: -43px;
-    right: auto;
-    margin-left: 0;
-    border-color: var(--timeline);
-  }
-
-  .direction-l .flag::after,
-  .direction-r .flag::after {
-    display: none;
-  }
-
-  .time-wrapper,
-  .direction-l .time-wrapper,
-  .direction-r .time-wrapper {
-    display: block;
-    margin-top: 0;
-  }
-
-  .desc,
-  .direction-r .desc {
-    margin: 0.65em 0 0;
-    padding: 0;
-    text-align: left;
-  }
-
-  .desc a {
-    overflow-wrap: anywhere;
-  }
 }
 
 @media (max-width: 480px) {
@@ -687,7 +677,8 @@ h2 {
   }
 
   .theme-option {
-    padding: 7px 10px;
+    min-width: 58px;
+    padding: 8px 9px;
     font-size: 0.88rem;
   }
 
