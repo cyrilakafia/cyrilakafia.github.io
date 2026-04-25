@@ -484,11 +484,6 @@ h2 {
   text-align: center;
 }
 
-.footer-grid > :first-child {
-  color: var(--text);
-  font-weight: 600;
-}
-
 .footer-note {
   font-size: 0.95rem;
   color: var(--muted);
