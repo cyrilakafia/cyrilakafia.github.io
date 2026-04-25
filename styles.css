@@ -156,8 +156,9 @@ h2 {
 
 .intro-column h1 {
   margin-bottom: 0;
-  font-size: clamp(2.45rem, 6vw, 3.2rem);
+  font-size: 2.25rem;
   line-height: 1.04;
+  white-space: nowrap;
 }
 
 .intro-role,
@@ -639,7 +640,7 @@ h2 {
   }
 
   .intro-column h1 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
 
   .social-links {
@@ -683,7 +684,7 @@ h2 {
   }
 
   .intro-column h1 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
 
   .button {
