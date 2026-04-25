@@ -97,10 +97,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-container">
     <div class="site-actions">
       <div class="theme-switcher" role="group" aria-label="Color theme">
@@ -119,7 +121,7 @@
           <p class="intro-role">Postgraduate Research Associate at Yale University</p>
           <p class="intro-note">Incoming PhD Student in Biomedical Engineering at Washington University in St. Louis, Fall 2026</p>
           <p>Broad Interests: Neuroengineering and Computational Neuroscience</p>
-          <p class="contact-line">cyril [dot] akafia [at] yale [dot] edu</p>
+          <p class="contact-line" data-email-user="cyril.akafia" data-email-domain="yale.edu">cyril [dot] akafia [at] yale [dot] edu</p>
           <p class="intro-note">Updated CV is available on request.</p>
           <div class="social-links" aria-label="External links">
             <a href="https://scholar.google.com/citations?user=WeTH5w0AAAAJ&hl=en" target="_blank" rel="noreferrer">Scholar</a>
@@ -139,7 +141,7 @@
       <a href="#resume">Vitae</a>
     </nav>
 
-    <main>
+    <main id="main">
       <section class="section" id="bio">
         <h2>Bio</h2>
         <p>
@@ -162,13 +164,13 @@
         <h2>News</h2>
         <div class="tabs">
           <div class="tab-nav" role="tablist" aria-label="News years">
-            <button class="button" data-tab-target="news-2023" role="tab" aria-selected="false">2023</button>
-            <button class="button" data-tab-target="news-2024" role="tab" aria-selected="false">2024</button>
-            <button class="button" data-tab-target="news-2025" role="tab" aria-selected="false">2025</button>
-            <button class="button active" data-tab-target="news-2026" role="tab" aria-selected="true">2026</button>
+            <button class="button" id="tab-news-2023" data-tab-target="news-2023" role="tab" aria-selected="false" aria-controls="news-2023" tabindex="-1">2023</button>
+            <button class="button" id="tab-news-2024" data-tab-target="news-2024" role="tab" aria-selected="false" aria-controls="news-2024" tabindex="-1">2024</button>
+            <button class="button" id="tab-news-2025" data-tab-target="news-2025" role="tab" aria-selected="false" aria-controls="news-2025" tabindex="-1">2025</button>
+            <button class="button active" id="tab-news-2026" data-tab-target="news-2026" role="tab" aria-selected="true" aria-controls="news-2026" tabindex="0">2026</button>
           </div>
           <div class="tab-content">
-            <div class="tab-pane" id="news-2023">
+            <div class="tab-pane" id="news-2023" role="tabpanel" aria-labelledby="tab-news-2023" tabindex="0">
               <ul class="compact-list">
                 <li><b>November 2023</b> I joined the <b>AZA Lab at Yale University</b> as a postgraduate research associate.</li>
                 <li><b>July 2023</b> I gave a talk on <i>Machine Learning Models Predict Small Molecules as Potential Biotherapeutics for COVID-19-induced Cytokine Storm</i> at the <b>WACCBIP Research Conference 2023</b> in Accra, Ghana.</li>
@@ -176,7 +178,7 @@
                 <li><b>January 2023</b> I presented <i>Machine Learning Models Predict Small Molecules as Potential Biotherapeutics for COVID-19-induced Cytokine Storm</i> at the <b>International Student Conference on Advanced Science and Technology (iCAST)</b>, Japan, online.</li>
               </ul>
             </div>
-            <div class="tab-pane" id="news-2024">
+            <div class="tab-pane" id="news-2024" role="tabpanel" aria-labelledby="tab-news-2024" tabindex="0">
               <ul class="compact-list">
                 <li><b>September 2024</b> I co-organized and taught a practical tutorial at the <a href="https://dlineuroai-workshop.github.io/neuroai-2024/" target="_blank" rel="noreferrer">NeuroAI Workshop at Deep Learning Indaba 2024</a>.</li>
                 <li><b>July 2024</b> I completed the <b>Neuromatch Academy Computational Neuroscience</b> course and worked on a project investigating cell type and layer-specific processing of novelty in mouse primary visual cortex.</li>
@@ -184,7 +186,7 @@
                 <li><b>May-June 2024</b> I mentored 20 students in Python programming as a section leader for <b>Stanford Code in Place</b>.</li>
               </ul>
             </div>
-            <div class="tab-pane" id="news-2025">
+            <div class="tab-pane" id="news-2025" role="tabpanel" aria-labelledby="tab-news-2025" tabindex="0">
               <ul class="compact-list">
                 <li><b>November 2025</b> I presented a poster, <i>Functional Encoding Units represent interpretable attractor-like dynamics in neural ensembles</i>, at <b>Society for Neuroscience (SfN) 2025</b> in San Diego, USA.</li>
                 <li><b>2025</b> I received the <b>Society for Neuroscience Trainee Professional Development Award (TPDA) 2025</b>, which recognizes trainees who demonstrate scientific merit and excellence in research.</li>
@@ -193,7 +195,7 @@
                 <li><b>December 2023 - November 2025</b> Through the <b>Indaba Mentorship Program</b>, I matched 50+ young researchers and students with mentors for research and career advice, contributing to publications, presentations, admissions, and job offers.</li>
               </ul>
             </div>
-            <div class="tab-pane active" id="news-2026">
+            <div class="tab-pane active" id="news-2026" role="tabpanel" aria-labelledby="tab-news-2026" tabindex="0">
               <ul class="compact-list">
                 <li><b>Fall 2026</b> I will join the <a href="https://engineering.washu.edu/faculty/Hong-Chen.html" target="_blank" rel="noreferrer">Chen Ultrasound Lab</a> at <a href="https://www.washu.edu/" target="_blank" rel="noreferrer">Washington University in St. Louis</a> as a PhD student in Biomedical Engineering, where I will work on closed-loop neuromodulation and focused ultrasound.</li>
               </ul>
@@ -207,11 +209,11 @@
         <p>Most recent publications on <a href="https://scholar.google.com/citations?user=WeTH5w0AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>.<br><sup><b>*</b></sup> indicates equal contribution.</p>
         <div class="tabs">
           <div class="tab-nav" role="tablist" aria-label="Publication categories">
-            <button class="button active" data-tab-target="papers-selected" role="tab" aria-selected="true">Selected</button>
-            <button class="button" data-tab-target="papers-all" role="tab" aria-selected="false">All</button>
+            <button class="button active" id="tab-papers-selected" data-tab-target="papers-selected" role="tab" aria-selected="true" aria-controls="papers-selected" tabindex="0">Selected</button>
+            <button class="button" id="tab-papers-all" data-tab-target="papers-all" role="tab" aria-selected="false" aria-controls="papers-all" tabindex="-1">All</button>
           </div>
           <div class="tab-content">
-            <div class="tab-pane active" id="papers-selected">
+            <div class="tab-pane active" id="papers-selected" role="tabpanel" aria-labelledby="tab-papers-selected" tabindex="0">
               <article class="paper">
                 <p class="title"><b>Music Mindfulness Acutely Enhances Autonomic Activity and Psychological State in Anxiety and Depression</b></p>
                 <p>C. Ramirez<sup>*</sup>, G. A. Alayine<sup>*</sup>, <b>C. S. K. Akafia<sup>*</sup></b>, ... A. S. Allsop</p>
@@ -229,14 +231,6 @@
                 </div>
               </article>
               <article class="paper">
-                <p class="title"><b>Organoids, Biocybersecurity, and Cyberbiosecurity: A Light Exploration</b></p>
-                <p>Xavier Palmer<sup>*</sup>, <b>Cyril Selase Kwaku Akafia<sup>*</sup></b>, Eleasa Woodson, Amanda Woodson, and Lucas Potter</p>
-                <p><i>Organoids 2024, 3, 83-112</i></p>
-                <div class="paper-buttons">
-                  <a class="button" href="https://doi.org/10.3390/organoids3020007" target="_blank" rel="noreferrer">Paper</a>
-                </div>
-              </article>
-              <article class="paper">
                 <p class="title"><b>An unbiased method to partition diverse neuronal responses into functional ensembles reveals interpretable population dynamics during innate social behavior</b></p>
                 <p>Alexander Lin<sup>*</sup>, <b>Cyril Selase Kwaku Akafia<sup>*</sup></b>, Olga Dal Monte, Siqi Fan, Nicholas Fagan, Philip Putnam, Kay M. Tye, Steve Chang, Demba Ba, and AZA Stephen Allsop</p>
                 <p><i>Preprint</i></p>
@@ -245,7 +239,7 @@
                 </div>
               </article>
             </div>
-            <div class="tab-pane" id="papers-all">
+            <div class="tab-pane" id="papers-all" role="tabpanel" aria-labelledby="tab-papers-all" tabindex="0">
               <article class="paper">
                 <p class="title"><b>Music Mindfulness Acutely Enhances Autonomic Activity and Psychological State in Anxiety and Depression</b></p>
                 <p>C. Ramirez<sup>*</sup>, G. A. Alayine<sup>*</sup>, <b>C. S. K. Akafia<sup>*</sup></b>, ... A. S. Allsop</p>

@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     themeOptions.forEach((button) => {
       const isActive = button.dataset.themeChoice === choice;
-      button.classList.toggle("is-active", isActive);
+      button.classList.toggle("active", isActive);
       button.setAttribute("aria-pressed", String(isActive));
     });
 
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const handleSystemThemeChange = (event) => {
+  const handleSystemThemeChange = () => {
     const currentChoice = root.dataset.themeChoice || "system";
     if (currentChoice !== "system") {
       return;
@@ -68,36 +68,64 @@ document.addEventListener("DOMContentLoaded", () => {
     applyThemeChoice("system");
   };
 
-  if (typeof mediaQuery.addEventListener === "function") {
-    mediaQuery.addEventListener("change", handleSystemThemeChange);
-  } else if (typeof mediaQuery.addListener === "function") {
-    mediaQuery.addListener(handleSystemThemeChange);
-  }
+  mediaQuery.addEventListener("change", handleSystemThemeChange);
+
+  document.querySelectorAll("[data-email-user][data-email-domain]").forEach((element) => {
+    const { emailUser, emailDomain } = element.dataset;
+    if (!emailUser || !emailDomain) {
+      return;
+    }
+
+    const email = `${emailUser}@${emailDomain}`;
+    const link = document.createElement("a");
+    link.href = `mailto:${email}`;
+    link.textContent = email;
+    element.replaceChildren(link);
+  });
 
   tabGroups.forEach((group) => {
-    const buttons = group.querySelectorAll(".tab-nav .button");
-    const panes = group.querySelectorAll(".tab-pane");
+    const buttons = Array.from(group.querySelectorAll(".tab-nav .button"));
+    const panes = Array.from(group.querySelectorAll(".tab-pane"));
+
+    const activateTab = (button) => {
+      const targetId = button.dataset.tabTarget;
+
+      buttons.forEach((item) => {
+        const isActive = item === button;
+        item.classList.toggle("active", isActive);
+        item.setAttribute("aria-selected", String(isActive));
+        item.tabIndex = isActive ? 0 : -1;
+      });
+
+      panes.forEach((pane) => {
+        pane.classList.toggle("active", pane.id === targetId);
+      });
+    };
 
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        const targetId = button.dataset.tabTarget;
+        activateTab(button);
+      });
 
-        buttons.forEach((item) => {
-          item.classList.remove("active");
-          item.setAttribute("aria-selected", "false");
-        });
+      button.addEventListener("keydown", (event) => {
+        const currentIndex = buttons.indexOf(button);
+        let nextIndex;
 
-        panes.forEach((pane) => {
-          pane.classList.remove("active");
-        });
-
-        button.classList.add("active");
-        button.setAttribute("aria-selected", "true");
-
-        const target = group.querySelector(`#${targetId}`);
-        if (target) {
-          target.classList.add("active");
+        if (event.key === "ArrowRight") {
+          nextIndex = (currentIndex + 1) % buttons.length;
+        } else if (event.key === "ArrowLeft") {
+          nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+        } else if (event.key === "Home") {
+          nextIndex = 0;
+        } else if (event.key === "End") {
+          nextIndex = buttons.length - 1;
+        } else {
+          return;
         }
+
+        event.preventDefault();
+        activateTab(buttons[nextIndex]);
+        buttons[nextIndex].focus();
       });
     });
   });
