@@ -130,12 +130,6 @@ h2::before {
   padding: 0 32px 40px;
 }
 
-.site-actions {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 20px;
-}
-
 .theme-switcher {
   display: inline-flex;
   align-items: center;
@@ -329,6 +323,10 @@ h2::before {
   border-bottom: 1px solid var(--line);
   padding: 18px 0;
   flex-wrap: wrap;
+}
+
+.site-nav .theme-switcher {
+  margin-left: auto;
 }
 
 .site-nav a {
@@ -967,13 +965,31 @@ h2::before {
   }
 }
 
+@media (max-width: 900px) {
+  .header-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .intro-column {
+    order: 1;
+  }
+
+  .profile-column {
+    display: flex;
+    justify-content: center;
+    order: 2;
+  }
+
+  .profile-photo {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 749px) {
   .site-container {
     padding: 0 16px 32px;
-  }
-
-  .site-actions {
-    padding-top: 14px;
   }
 
   .site-header {
@@ -988,6 +1004,11 @@ h2::before {
   .profile-column {
     display: flex;
     justify-content: center;
+    order: 2;
+  }
+
+  .intro-column {
+    order: 1;
   }
 
   .profile-photo {
@@ -1138,10 +1159,6 @@ h2::before {
 @media (max-width: 480px) {
   .site-container {
     padding: 0 14px 26px;
-  }
-
-  .site-actions {
-    justify-content: center;
   }
 
   .theme-option {
