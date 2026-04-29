@@ -182,6 +182,7 @@ h2::before {
   color: var(--text);
 }
 
+.theme-option.active,
 .theme-option.is-active {
   background: var(--accent-soft);
   color: var(--accent);
@@ -201,6 +202,9 @@ h2::before {
 
 .profile-photo {
   width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
   border-radius: 14px;
 }
 
@@ -552,6 +556,21 @@ h2::before {
   color: var(--text);
 }
 
+.research-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  margin-bottom: 8px;
+  padding: 0 8px;
+  border: 1px solid var(--washu-soft);
+  border-radius: 999px;
+  background: var(--washu-soft);
+  color: var(--washu);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .research-description {
   margin: 0 0 12px;
   font-size: 0.82rem;
@@ -587,15 +606,20 @@ h2::before {
 
 .paper-meta a {
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
-  transition: opacity 200ms ease;
+  transition: color 200ms ease;
 }
 
 .paper-meta a:hover {
-  opacity: 0.78;
+  color: var(--text);
+}
+
+.paper-meta a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .paper-meta i {
@@ -891,9 +915,19 @@ h2::before {
 }
 
 .site-footer {
+  position: relative;
   border-top: 1px solid var(--line);
-  padding-top: 18px;
+  padding-top: 20px;
   color: var(--muted);
+}
+
+.site-footer::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin: 0 auto 16px;
+  background: var(--accent);
 }
 
 .footer-grid {
