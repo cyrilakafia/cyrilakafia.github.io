@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ["research-projects", "research"],
     ["publications", "research"],
     ["presentations", "research"],
+    ["service", "service"],
+    ["teaching", "service"],
+    ["mentorship", "service"],
+    ["leadership", "service"],
     ["blog", "blog"],
   ]);
 
