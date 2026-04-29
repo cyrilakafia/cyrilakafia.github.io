@@ -585,6 +585,19 @@ h2::before {
   color: var(--muted);
 }
 
+.paper-meta a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: opacity 200ms ease;
+}
+
+.paper-meta a:hover {
+  opacity: 0.78;
+}
+
 .paper-meta i {
   font-style: italic;
 }
