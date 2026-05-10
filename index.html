@@ -4,15 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cyril Akafia</title>
-  <meta name="description" content="Cyril Akafia is a postgraduate research associate at Yale University and incoming PhD student at Washington University in St. Louis, working in neuroengineering, computational neuroscience, and closed-loop neuromodulation.">
+  <meta name="description" content="Cyril Akafia is a postgraduate research associate at Yale University working at the intersection of neuroengineering, computational neuroscience, closed-loop neuromodulation, and focused ultrasound.">
   <meta name="author" content="Cyril Selase Kwaku Akafia">
-  <meta name="theme-color" content="#f9f8f6">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://cyrilakafia.github.io/">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Cyril Akafia">
-  <meta property="og:description" content="Postgraduate research associate at Yale University and incoming PhD student at Washington University in St. Louis, working in neuroengineering, computational neuroscience, and closed-loop neuromodulation.">
+  <meta property="og:description" content="Postgraduate research associate at Yale University working in neuroengineering, computational neuroscience, closed-loop neuromodulation, and focused ultrasound.">
   <meta property="og:url" content="https://cyrilakafia.github.io/">
-  <!-- TODO: Regenerate og-image.png at 1200x630 with name, title, and accent color background -->
   <meta property="og:image" content="https://cyrilakafia.github.io/assets/og-image.png?v=20260429">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
@@ -22,7 +21,7 @@
   <meta property="profile:last_name" content="Akafia">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cyril Akafia">
-  <meta name="twitter:description" content="Postgraduate research associate at Yale University and incoming PhD student at Washington University in St. Louis, working in neuroengineering, computational neuroscience, and closed-loop neuromodulation.">
+  <meta name="twitter:description" content="Postgraduate research associate at Yale University working in neuroengineering, computational neuroscience, closed-loop neuromodulation, and focused ultrasound.">
   <meta name="twitter:image" content="https://cyrilakafia.github.io/assets/og-image.png?v=20260429">
   <meta name="twitter:image:alt" content="Photo of Cyril Akafia">
   <script type="application/ld+json">
@@ -34,7 +33,7 @@
       "url": "https://cyrilakafia.github.io/",
       "image": "https://cyrilakafia.github.io/assets/profile.jpg?v=20260429",
       "jobTitle": "Postgraduate Research Associate",
-      "description": "Postgraduate research associate at Yale University and incoming PhD student at Washington University in St. Louis, working in neuroengineering, computational neuroscience, and closed-loop neuromodulation.",
+      "description": "Postgraduate research associate at Yale University working in neuroengineering, computational neuroscience, closed-loop neuromodulation, and focused ultrasound.",
       "affiliation": [
         {
           "@type": "CollegeOrUniversity",
@@ -66,15 +65,42 @@
       ]
     }
   </script>
+  <script>
+    (() => {
+      const resolveTheme = (choice, prefersDark) => {
+        if (choice === "light" || choice === "dark") {
+          return choice;
+        }
+
+        return prefersDark ? "dark" : "light";
+      };
+
+      try {
+        const storedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const themeChoice = ["light", "dark", "system"].includes(storedTheme) ? storedTheme : "system";
+        const theme = resolveTheme(themeChoice, prefersDark);
+        document.documentElement.dataset.themeChoice = themeChoice;
+        document.documentElement.dataset.theme = theme;
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta) {
+          themeMeta.setAttribute("content", theme === "dark" ? "#0f1419" : "#ffffff");
+        }
+      } catch (error) {
+        document.documentElement.dataset.themeChoice = "system";
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon.png?v=20260429">
-  <link rel="shortcut icon" type="image/png" href="assets/favicon.png?v=20260429">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/my-notion-face-transparent.png?v=20260429">
+  <link rel="shortcut icon" type="image/png" href="assets/my-notion-face-transparent.png?v=20260429">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20260429">
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=20260429">
-  <link rel="stylesheet" href="styles.css?v=20260510-full-pass">
-  <script src="script.js?v=20260510-full-pass" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260429-2">
+  <script src="script.js?v=20260429-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -86,27 +112,22 @@
         </div>
         <div class="intro-column">
           <h1>Cyril Selase Kwaku Akafia</h1>
-          <p class="intro-role">Postgraduate Research Associate at <a class="affiliation affiliation--yale" href="https://www.yale.edu/" target="_blank" rel="noopener noreferrer">Yale University</a></p>
-          <p class="intro-note">Incoming PhD Student in Biomedical Engineering at <a class="affiliation affiliation--washu" href="https://www.washu.edu/" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a></p>
+          <p class="intro-role">Postgraduate Research Associate at <a class="affiliation affiliation--yale" href="https://www.yale.edu/" target="_blank" rel="noreferrer">Yale University</a></p>
+          <p class="intro-note">Incoming PhD Student in Biomedical Engineering at <a class="affiliation affiliation--washu" href="https://www.washu.edu/" target="_blank" rel="noreferrer">Washington University in St. Louis</a></p>
           <div class="social-links" aria-label="Contact and external profiles">
             <a class="social-icon social-icon--email" href="mailto:cyril.akafia@yale.edu" aria-label="Email Cyril">
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
-            <a class="social-icon social-icon--scholar" href="https://scholar.google.com/citations?user=WeTH5w0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+            <a class="social-icon social-icon--scholar" href="https://scholar.google.com/citations?user=WeTH5w0AAAAJ&hl=en" target="_blank" rel="noreferrer" aria-label="Google Scholar">
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.749-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
             </a>
-            <a class="social-icon social-icon--github" href="https://github.com/cyrilakafia" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a class="social-icon social-icon--github" href="https://github.com/cyrilakafia" target="_blank" rel="noreferrer" aria-label="GitHub">
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             </a>
-            <a class="social-icon social-icon--linkedin" href="https://www.linkedin.com/in/akafia/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a class="social-icon social-icon--linkedin" href="https://www.linkedin.com/in/akafia/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
           </div>
-          <!-- TODO: Add cv.pdf to /assets/ -->
-          <a class="cv-button" href="/assets/cv.pdf">
-            <span aria-hidden="true">↓</span>
-            <span>Download CV</span>
-          </a>
         </div>
       </div>
     </header>
@@ -114,30 +135,43 @@
     <nav class="site-nav" aria-label="Primary">
       <a class="page-link active" href="#bio" data-page="bio" aria-current="page">About</a>
       <a class="page-link" href="#research" data-page="research">Research</a>
-      <a class="page-link" href="#publications" data-page="research">Publications</a>
-      <a class="page-link" href="#cv" data-page="bio">CV</a>
       <a class="page-link" href="#service" data-page="service">Service</a>
       <a class="page-link" href="#blog" data-page="blog">Blog</a>
+      <div class="theme-switcher" role="group" aria-label="Color theme">
+        <button class="theme-option" data-theme-choice="light" type="button" aria-pressed="false" aria-label="Light theme" title="Light">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+        <button class="theme-option" data-theme-choice="dark" type="button" aria-pressed="false" aria-label="Dark theme" title="Dark">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button class="theme-option" data-theme-choice="system" type="button" aria-pressed="false" aria-label="System theme" title="System">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+        </button>
+      </div>
     </nav>
 
     <main id="main">
       <div class="page active" id="page-bio" data-page="bio">
-      <section class="section" id="bio">
+      <section class="section">
         <h2>Bio</h2>
         <p>
-          I study how the brain encodes information at the population level, and how we can build closed-loop systems that use that structure to modulate neural circuits. I am currently a postgraduate research associate in the <a href="https://www.azalab.org/" target="_blank" rel="noopener noreferrer">AZA Lab</a> at
-          <a href="https://www.yale.edu/" target="_blank" rel="noopener noreferrer">Yale University</a>, advised by
-          <a href="https://www.azalab.org/people/aza-allsop" target="_blank" rel="noopener noreferrer">AZA Allsop, MD, PhD</a>.
+          I am a postgraduate research associate working in the <a href="https://www.azalab.org/" target="_blank" rel="noreferrer">AZA Lab</a> at
+          <a href="https://www.yale.edu/" target="_blank" rel="noreferrer">Yale University</a>, advised by
+          <a href="https://www.azalab.org/people/aza-allsop" target="_blank" rel="noreferrer">AZA Allsop, MD, PhD</a>. My research interests are in
+          neuroengineering and computational neuroscience.
         </p>
         <p>
-          I will join the
-          <a href="https://engineering.washu.edu/faculty/Hong-Chen.html" target="_blank" rel="noopener noreferrer">Chen Ultrasound Lab</a> at
-          <a href="https://www.washu.edu/" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a> as a PhD student in Biomedical Engineering, where my work will focus on closed-loop neuromodulation using focused ultrasound.
+          Prior to my current research position, I obtained a B.Sc in Biomedical Engineering at the
+          <a href="https://www.ug.edu.gh/" target="_blank" rel="noreferrer">University of Ghana</a>, where I was fortunate to be advised by
+          <a href="https://www.ug.edu.gh/biomed-eng/staff/samuel-kojo-kwofie-bsc-kumasi-msc-uct-phd-uwc" target="_blank" rel="noreferrer">Prof. Samuel K Kwofie</a>.
         </p>
         <p>
-          I grew up in Ghana and completed my B.Sc. in Biomedical Engineering at the
-          <a href="https://www.ug.edu.gh/" target="_blank" rel="noopener noreferrer">University of Ghana</a>, where I was advised by
-          <a href="https://www.ug.edu.gh/biomed-eng/staff/samuel-kojo-kwofie-bsc-kumasi-msc-uct-phd-uwc" target="_blank" rel="noopener noreferrer">Prof. Samuel K. Kwofie</a>. I organize NeuroAI workshops at the Deep Learning Indaba, which has brought together 150+ researchers across Africa, and I am committed to mentorship for students from underrepresented backgrounds in STEM.
+          I will be joining the
+          <a href="https://engineering.washu.edu/faculty/Hong-Chen.html" target="_blank" rel="noreferrer">Chen Ultrasound Lab</a> at
+          <a href="https://www.washu.edu/" target="_blank" rel="noreferrer">Washington University in St. Louis</a> as a PhD student in Biomedical
+          Engineering, where I will work on closed-loop neuromodulation and focused ultrasound. I am committed to mentorship,
+          particularly for students from underrepresented backgrounds in STEM, and am an organizer of the NeuroAI workshops at the
+          Deep Learning Indaba.
         </p>
       </section>
 
@@ -151,7 +185,7 @@
           <div class="tab-content">
             <div class="tab-pane active" id="news-recent" role="tabpanel" aria-labelledby="tab-news-recent" tabindex="0">
               <ul class="compact-list">
-                <li><b>Fall 2026</b> I will join the <a href="https://engineering.washu.edu/faculty/Hong-Chen.html" target="_blank" rel="noopener noreferrer">Chen Ultrasound Lab</a> at <a href="https://www.washu.edu/" target="_blank" rel="noopener noreferrer">Washington University in St. Louis</a> as a PhD student in Biomedical Engineering, where I will work on closed-loop neuromodulation and focused ultrasound.</li>
+                <li><b>Fall 2026</b> I will join the <a href="https://engineering.washu.edu/faculty/Hong-Chen.html" target="_blank" rel="noreferrer">Chen Ultrasound Lab</a> at <a href="https://www.washu.edu/" target="_blank" rel="noreferrer">Washington University in St. Louis</a> as a PhD student in Biomedical Engineering, where I will work on closed-loop neuromodulation and focused ultrasound.</li>
                 <li><b>November 2025</b> I presented a poster, <i>Functional Encoding Units represent interpretable attractor-like dynamics in neural ensembles</i>, at <b>Society for Neuroscience (SfN) 2025</b> in San Diego, USA.</li>
                 <li><b>2025</b> I received the <b>Society for Neuroscience Trainee Professional Development Award (TPDA) 2025</b>, which recognizes trainees who demonstrate scientific merit and excellence in research.</li>
               </ul>
@@ -160,6 +194,7 @@
               <ul class="compact-list">
                 <li><b>July 2024</b> I completed the <b>Neuromatch Academy Computational Neuroscience</b> course and worked on a project investigating cell type and layer-specific processing of novelty in mouse primary visual cortex.</li>
                 <li><b>June 2024</b> I presented a poster, <i>An unbiased method to partition diverse neuronal responses into functional ensembles reveals interpretable population dynamics during innate social behavior</i>, at the <b>10th Annual BRAIN Initiative Conference</b> in Rockville, Maryland.</li>
+                <li><b>November 2023</b> I joined the <b>AZA Lab at Yale University</b> as a postgraduate research associate.</li>
                 <li><b>July 2023</b> I gave a talk on <i>Machine Learning Models Predict Small Molecules as Potential Biotherapeutics for COVID-19-induced Cytokine Storm</i> at the <b>WACCBIP Research Conference 2023</b> in Accra, Ghana.</li>
                 <li><b>April-May 2023</b> I completed the <b>Simons Computational Neuroscience Imbizo</b> in Cape Town, South Africa.</li>
                 <li><b>January 2023</b> I presented <i>Machine Learning Models Predict Small Molecules as Potential Biotherapeutics for COVID-19-induced Cytokine Storm</i> at the <b>International Student Conference on Advanced Science and Technology (iCAST)</b>, Japan, online.</li>
@@ -169,10 +204,8 @@
         </div>
       </section>
 
-      <section class="section" id="cv">
-        <span class="anchor-alias" id="resume"></span>
-        <span class="anchor-alias" id="vitae"></span>
-        <h2>CV</h2>
+      <section class="section" id="resume">
+        <h2>Vitae</h2>
         <ul class="timeline">
           <li class="timeline-item--washu">
             <div class="direction-r">
@@ -189,7 +222,7 @@
                 <span class="flag">Yale University</span>
                 <span class="time-wrapper"><span class="time">Nov. 2023 - Present</span></span>
               </div>
-              <div class="desc"><b>Postgraduate Research Associate</b><br>AZA Lab • Advisor: <a href="https://www.azalab.org/people/aza-allsop" target="_blank" rel="noopener noreferrer">AZA Stephen Allsop, MD, PhD</a></div>
+              <div class="desc"><b>Postgraduate Research Associate</b><br>AZA Lab • Advisor: <a href="https://www.azalab.org/people/aza-allsop" target="_blank" rel="noreferrer">AZA Stephen Allsop, MD, PhD</a></div>
             </div>
           </li>
           <li>
@@ -198,7 +231,7 @@
                 <span class="flag">MinoHealth AI Labs</span>
                 <span class="time-wrapper"><span class="time">Oct. 2022 - Oct. 2023</span></span>
               </div>
-              <div class="desc"><b>Junior ML Engineer</b><br>Built and evaluated machine learning models for medical imaging analysis, supporting clinical diagnostics in low-resource settings.</div>
+              <div class="desc"><b>Junior ML Engineer</b></div>
             </div>
           </li>
           <li>
@@ -207,7 +240,7 @@
                 <span class="flag">Simons Computational Neuroscience Imbizo</span>
                 <span class="time-wrapper"><span class="time">Apr. 2023 - May 2023</span></span>
               </div>
-              <div class="desc"><b>Summer School</b><br>Computational Neuroscience<br>Worked on a project investigating cell-type and layer-specific processing of visual novelty in mouse primary visual cortex.</div>
+              <div class="desc"><b>Summer School</b><br>Computational Neuroscience</div>
             </div>
           </li>
           <li>
@@ -224,48 +257,47 @@
       </div>
 
       <div class="page" id="page-research" data-page="research">
-      <section class="section" id="research">
-        <span class="anchor-alias" id="research-projects"></span>
+      <section class="section" id="research-projects">
         <h2>Research</h2>
         <p>Selected projects spanning neural ensemble decoding, mental health, and translational neuromodulation.</p>
         <div class="research-grid">
           <article class="research-card">
-            <a class="research-link" href="https://engineering.washu.edu/faculty/Hong-Chen.html" target="_blank" rel="noopener noreferrer">
+            <a class="research-link" href="https://engineering.washu.edu/faculty/Hong-Chen.html" target="_blank" rel="noreferrer">
               <img class="research-image" src="assets/research/ultrasound.svg" alt="Focused ultrasound illustration">
               <div class="research-body">
                 <span class="research-tag">Upcoming</span>
                 <h3 class="research-title">Closed-Loop Focused Ultrasound</h3>
-                <p class="research-description">Can we use the brain's own activity to guide when and where to stimulate? My upcoming PhD work in the Chen Ultrasound Lab will develop closed-loop systems that use real-time neural recordings to drive focused ultrasound stimulation, enabling non-invasive, circuit-specific neuromodulation without surgery.</p>
+                <p class="research-description">Upcoming PhD work in the Chen Ultrasound Lab on closed-loop neuromodulation using focused ultrasound to non-invasively shape neural circuits.</p>
                 <span class="research-cta">Visit lab <span aria-hidden="true">→</span></span>
               </div>
             </a>
           </article>
           <article class="research-card">
-            <a class="research-link" href="https://doi.org/10.1101/2024.05.08.593229" target="_blank" rel="noopener noreferrer">
+            <a class="research-link" href="https://doi.org/10.1101/2024.05.08.593229" target="_blank" rel="noreferrer">
               <img class="research-image" src="assets/research/feu.svg" alt="Functional Encoding Units illustration">
               <div class="research-body">
                 <h3 class="research-title">Functional Encoding Units in Neural Ensembles</h3>
-                <p class="research-description">Large-scale neural recordings contain rich population-level structure that single-neuron analyses miss. We developed FEU, an unsupervised method to partition neuronal responses into functional ensembles based on shared activity patterns. Applied to social behavior data, FEU reveals interpretable attractor-like dynamics that track behavioral state.</p>
+                <p class="research-description">An unbiased method to partition diverse neuronal responses into functional ensembles, revealing interpretable population dynamics during innate social behavior.</p>
                 <span class="research-cta">Read preprint <span aria-hidden="true">→</span></span>
               </div>
             </a>
           </article>
           <article class="research-card">
-            <a class="research-link" href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1554156/full" target="_blank" rel="noopener noreferrer">
+            <a class="research-link" href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1554156/full" target="_blank" rel="noreferrer">
               <img class="research-image" src="assets/research/music.svg" alt="Music mindfulness illustration">
               <div class="research-body">
                 <h3 class="research-title">Music Mindfulness for Mental Health</h3>
-                <p class="research-description">We examined whether a brief structured music mindfulness session could produce measurable physiological and psychological changes in adults with anxiety and depression. Using HRV and self-report measures, we found acute improvements in autonomic tone and mood, supporting music as a low-barrier adjunct mental health intervention.</p>
+                <p class="research-description">How music mindfulness acutely enhances autonomic activity and psychological state in adults experiencing anxiety and depression.</p>
                 <span class="research-cta">Read paper <span aria-hidden="true">→</span></span>
               </div>
             </a>
           </article>
           <article class="research-card">
-            <a class="research-link" href="https://www.mdpi.com/2078-2489/16/1/34" target="_blank" rel="noopener noreferrer">
+            <a class="research-link" href="https://www.mdpi.com/2078-2489/16/1/34" target="_blank" rel="noreferrer">
               <img class="research-image" src="assets/research/biomedical-ai.svg" alt="Biomedical AI illustration">
               <div class="research-body">
                 <h3 class="research-title">Biomedical AI for Discovery and Diagnosis</h3>
-                <p class="research-description">Early work applying machine learning to biomedical discovery problems, including AICpred, a model that screens small molecules for anti-inflammatory activity by predicting TLR4-MyD88 binding disruption, and clinical imaging models to support radiology workflows in low-resource settings.</p>
+                <p class="research-description">Machine learning for biomedical problems, including anti-inflammatory compound screening with AICpred and clinical imaging models for radiology support.</p>
                 <span class="research-cta">Read paper <span aria-hidden="true">→</span></span>
               </div>
             </a>
@@ -275,23 +307,23 @@
 
       <section class="section" id="publications">
         <h2>Publications</h2>
-        <p>Most recent publications on <a href="https://scholar.google.com/citations?user=WeTH5w0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</p>
+        <p>Most recent publications on <a href="https://scholar.google.com/citations?user=WeTH5w0AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>.</p>
         <div class="papers-grid active">
           <article class="paper">
-            <p class="title"><a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1554156/full" target="_blank" rel="noopener noreferrer">Music Mindfulness Acutely Enhances Autonomic Activity and Psychological State in Anxiety and Depression</a><a class="pub-badge" href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1554156/full" target="_blank" rel="noopener noreferrer">Paper</a></p>
-            <p class="paper-meta">Ramirez, C., Alayine, G. A., <b>Akafia, C. S. K.</b>, … Allsop, A. S. · <i>Frontiers in Neuroscience</i> · 2025; 19</p>
+            <p class="title"><a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1554156/full" target="_blank" rel="noreferrer">Music Mindfulness Acutely Enhances Autonomic Activity and Psychological State in Anxiety and Depression</a></p>
+            <p class="paper-meta">C. Ramirez, G. A. Alayine, <b>C. S. K. Akafia</b>, … A. S. Allsop · <i>Frontiers in Neuroscience</i> · 2025; 19</p>
           </article>
           <article class="paper">
-            <p class="title"><a href="https://www.mdpi.com/2078-2489/16/1/34" target="_blank" rel="noopener noreferrer">AICpred: Machine Learning-Based Prediction of Potential Anti-Inflammatory Compounds Targeting TLR4-MyD88 Binding Mechanism</a><a class="pub-badge" href="https://www.mdpi.com/2078-2489/16/1/34" target="_blank" rel="noopener noreferrer">Paper</a></p>
-            <p class="paper-meta">Fry-Nartey, L., <b>Akafia, C. S. K.</b>, … Kwofie, S. K. · <i>Information</i> · 2025; 16:34</p>
+            <p class="title"><a href="https://www.mdpi.com/2078-2489/16/1/34" target="_blank" rel="noreferrer">AICpred: Machine Learning-Based Prediction of Potential Anti-Inflammatory Compounds Targeting TLR4-MyD88 Binding Mechanism</a></p>
+            <p class="paper-meta">L. Fry-Nartey, <b>C. S. K. Akafia</b>, … S. K. Kwofie · <i>Information</i> · 2025; 16:34</p>
           </article>
           <article class="paper">
-            <p class="title"><a href="https://doi.org/10.3390/organoids3020007" target="_blank" rel="noopener noreferrer">Organoids, Biocybersecurity, and Cyberbiosecurity: A Light Exploration</a><a class="pub-badge" href="https://doi.org/10.3390/organoids3020007" target="_blank" rel="noopener noreferrer">Paper</a></p>
-            <p class="paper-meta">Palmer, X., <b>Akafia, C. S. K.</b>, Woodson, E., Woodson, A., Potter, L. · <i>Organoids</i> · 2024; 3, 83–112</p>
+            <p class="title"><a href="https://doi.org/10.3390/organoids3020007" target="_blank" rel="noreferrer">Organoids, Biocybersecurity, and Cyberbiosecurity: A Light Exploration</a></p>
+            <p class="paper-meta">Xavier Palmer, <b>Cyril Selase Kwaku Akafia</b>, Eleasa Woodson, Amanda Woodson, Lucas Potter · <i>Organoids</i> · 2024; 3, 83–112</p>
           </article>
           <article class="paper">
-            <p class="title"><a href="https://doi.org/10.1101/2024.05.08.593229" target="_blank" rel="noopener noreferrer">An unbiased method to partition diverse neuronal responses into functional ensembles reveals interpretable population dynamics during innate social behavior</a><a class="pub-badge pub-badge--preprint" href="https://doi.org/10.1101/2024.05.08.593229" target="_blank" rel="noopener noreferrer">Preprint</a></p>
-            <p class="paper-meta">Lin, A., <b>Akafia, C. S. K.</b>, Dal Monte, O., Fan, S., Fagan, N., Putnam, P., Tye, K. M., Chang, S., Ba, D., Allsop, A. S. · <i>Preprint</i> · 2024</p>
+            <p class="title"><a href="https://doi.org/10.1101/2024.05.08.593229" target="_blank" rel="noreferrer">An unbiased method to partition diverse neuronal responses into functional ensembles reveals interpretable population dynamics during innate social behavior</a></p>
+            <p class="paper-meta">Alexander Lin, <b>Cyril Selase Kwaku Akafia</b>, Olga Dal Monte, Siqi Fan, Nicholas Fagan, Philip Putnam, Kay M. Tye, Steve Chang, Demba Ba, AZA Stephen Allsop · <i>Preprint</i> · 2024</p>
           </article>
         </div>
       </section>
@@ -302,62 +334,33 @@
           <article class="paper">
             <p class="title">Functional Encoding Units represent interpretable attractor-like dynamics in neural ensembles</p>
             <p class="paper-meta"><b>Poster</b> · Society for Neuroscience (SfN) 2025 · San Diego, USA · November 2025</p>
-            <p class="paper-meta">Demonstrated that FEU-identified ensembles exhibit attractor-like dynamics that track behavioral state during innate social behavior in mice.</p>
           </article>
           <article class="paper">
             <p class="title">NeuroAI practical tutorial</p>
             <p class="paper-meta"><b>Tutorial</b> · NeuroAI Workshop at Deep Learning Indaba 2024 · September 2024</p>
-            <p class="paper-meta">Hands-on tutorial on dimensionality reduction methods — PCA, UMAP, and manifold-based approaches — applied to large-scale neural recordings, delivered to 80+ attendees.</p>
           </article>
           <article class="paper">
             <p class="title">An unbiased method to partition diverse neuronal responses into functional ensembles reveals interpretable population dynamics during innate social behavior</p>
             <p class="paper-meta"><b>Poster</b> · 10th Annual BRAIN Initiative Conference · Rockville, Maryland · June 2024</p>
-            <p class="paper-meta">Presented the FEU framework and its application to social behavior neural data, demonstrating interpretable population-level dynamics.</p>
           </article>
           <article class="paper">
             <p class="title">Machine Learning Models Predict Small Molecules as Potential Biotherapeutics for COVID-19-induced Cytokine Storm</p>
             <p class="paper-meta"><b>Talk</b> · WACCBIP Research Conference 2023 · Accra, Ghana · July 2023</p>
-            <p class="paper-meta">Presented ML-based virtual screening results identifying candidate anti-inflammatory compounds for COVID-19-induced cytokine storm.</p>
           </article>
           <article class="paper">
             <p class="title">Machine Learning Models Predict Small Molecules as Potential Biotherapeutics for COVID-19-induced Cytokine Storm</p>
             <p class="paper-meta"><b>Presentation</b> · International Student Conference on Advanced Science and Technology (iCAST) · Japan, online · January 2023</p>
-            <p class="paper-meta">Online presentation of ML screening pipeline for COVID-19 cytokine storm to an international audience.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Functional Encoding Units (FEU)</h3>
-            <p>Unsupervised pipeline for identifying functional neuronal ensembles from large-scale calcium imaging data. Implements clustering, ensemble validation, and attractor dynamics analysis.</p>
-            <a href="https://github.com/cyrilakafia" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">→</span></a>
-            <span class="project-tag">Python · Neuroscience</span>
-          </article>
-          <article class="project-card">
-            <h3>EEG Analysis Pipeline</h3>
-            <p>MNE-based preprocessing and analysis pipeline for EEG data, including PAC (phase-amplitude coupling), HRV analysis, and sleep staging with YASA. Used across multiple Yale lab projects.</p>
-            <a href="https://github.com/cyrilakafia" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">→</span></a>
-            <span class="project-tag">Python · EEG · Signal Processing</span>
-          </article>
-          <article class="project-card">
-            <h3>AICpred</h3>
-            <p>Machine learning model for predicting anti-inflammatory compound activity via TLR4-MyD88 binding disruption. Built during undergraduate research.</p>
-            <a href="https://www.mdpi.com/2078-2489/16/1/34" target="_blank" rel="noopener noreferrer">View paper <span aria-hidden="true">→</span></a>
-            <span class="project-tag">Python · Biomedical AI</span>
           </article>
         </div>
       </section>
       </div>
 
-      <div class="page" id="service" data-page="service">
+      <div class="page" id="page-service" data-page="service">
       <section class="section" id="teaching">
         <h2>Teaching</h2>
         <div class="papers-grid active">
           <article class="paper">
-            <p class="title"><a href="https://codeinplace.stanford.edu/" target="_blank" rel="noopener noreferrer">Section Leader · Stanford Code in Place</a></p>
+            <p class="title"><a href="https://codeinplace.stanford.edu/" target="_blank" rel="noreferrer">Section Leader · Stanford Code in Place</a></p>
             <p class="paper-meta">May 2024 – June 2024</p>
             <p class="paper-meta">Tutored 20 students in Python programming concepts and supported them through final projects, leading to a 100% pass rate in my section.</p>
           </article>
@@ -368,7 +371,7 @@
         <h2>Mentorship & Outreach</h2>
         <div class="papers-grid active">
           <article class="paper">
-            <p class="title"><a href="https://deeplearningindaba.com/mentorship/" target="_blank" rel="noopener noreferrer">Organizer · Deep Learning Indaba Mentorship Programme</a></p>
+            <p class="title"><a href="https://deeplearningindaba.com/mentorship/" target="_blank" rel="noreferrer">Organizer · Deep Learning Indaba Mentorship Programme</a></p>
             <p class="paper-meta">December 2023 – November 2025</p>
             <p class="paper-meta">A continent-wide programme that pairs young African researchers and students with experienced mentors. I matched 50+ mentees with mentors for research and career advice, contributing to publications, presentations, admissions, and job offers.</p>
           </article>
@@ -390,11 +393,11 @@
         <div class="papers-grid active">
           <article class="paper">
             <p class="title">Co-organizer · NeuroAI Workshops at Deep Learning Indaba</p>
-            <p class="paper-meta">September 2024 – Present · <a href="https://dlineuroai-workshop.github.io/neuroai-2024/" target="_blank" rel="noopener noreferrer">2024 Workshop</a> · <a href="https://dlineuroai-workshop.github.io/neuroai-2025/" target="_blank" rel="noopener noreferrer">2025 Workshop</a></p>
+            <p class="paper-meta">September 2024 – Present · <a href="https://dlineuroai-workshop.github.io/neuroai-2024/" target="_blank" rel="noreferrer">2024 Workshop</a> · <a href="https://dlineuroai-workshop.github.io/neuroai-2025/" target="_blank" rel="noreferrer">2025 Workshop</a></p>
             <p class="paper-meta">Organized NeuroAI workshops in Rwanda and Senegal, attracting 150+ attendees. Delivered a practical tutorial on dimensionality reduction for understanding patterns of neural activity, and coordinated talks and panel discussions from 7 international speakers.</p>
           </article>
           <article class="paper">
-            <p class="title"><a href="https://www.linkedin.com/company/world-movers-team/posts/?feedView=all" target="_blank" rel="noopener noreferrer">Active Member · World Movers Team</a></p>
+            <p class="title"><a href="https://www.linkedin.com/company/world-movers-team/posts/?feedView=all" target="_blank" rel="noreferrer">Active Member · World Movers Team</a></p>
             <p class="paper-meta">August 2023 – Present</p>
             <p class="paper-meta">A youth-led nonprofit championing health equity and community development across Ghana through healthcare access initiatives, community projects, and volunteer leadership training.</p>
           </article>
@@ -407,10 +410,10 @@
       </div>
 
       <div class="page" id="page-blog" data-page="blog">
-      <section class="section" id="blog">
+      <section class="section">
         <h2>Blog</h2>
-        <div class="post-list">
-          <p class="blog-empty">I write occasionally about neuroscience, research tools, and things I am learning. Posts coming soon.</p>
+        <div class="post-list" data-post-list>
+          <p class="blog-empty">Loading posts...</p>
         </div>
       </section>
       </div>
@@ -418,21 +421,8 @@
 
     <footer class="site-footer">
       <div class="footer-grid">
-        <div class="footer-note">&copy; 2026 Cyril Selase Kwaku Akafia</div>
-        <div class="footer-links" aria-label="Contact and external profiles">
-          <a class="social-icon social-icon--email" href="mailto:cyril.akafia@yale.edu" aria-label="Email Cyril">
-            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </a>
-          <a class="social-icon social-icon--scholar" href="https://scholar.google.com/citations?user=WeTH5w0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
-            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.749-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
-          </a>
-          <a class="social-icon social-icon--github" href="https://github.com/cyrilakafia" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-          </a>
-          <a class="social-icon social-icon--linkedin" href="https://www.linkedin.com/in/akafia/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-        </div>
+        <div class="footer-note">Last updated: April 24, 2026</div>
+        <div class="footer-note">&copy; 2026 Cyril Selase Kwaku Akafia. All rights reserved.</div>
       </div>
     </footer>
   </div>

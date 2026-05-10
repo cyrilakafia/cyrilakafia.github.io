@@ -6,16 +6,43 @@
   <title>Blog Post | Cyril Akafia</title>
   <meta name="description" content="A blog post by Cyril Akafia.">
   <meta name="author" content="Cyril Selase Kwaku Akafia">
-  <meta name="theme-color" content="#f9f8f6">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    (() => {
+      const resolveTheme = (choice, prefersDark) => {
+        if (choice === "light" || choice === "dark") {
+          return choice;
+        }
+
+        return prefersDark ? "dark" : "light";
+      };
+
+      try {
+        const storedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const themeChoice = ["light", "dark", "system"].includes(storedTheme) ? storedTheme : "system";
+        const theme = resolveTheme(themeChoice, prefersDark);
+        document.documentElement.dataset.themeChoice = themeChoice;
+        document.documentElement.dataset.theme = theme;
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta) {
+          themeMeta.setAttribute("content", theme === "dark" ? "#0f1419" : "#ffffff");
+        }
+      } catch (error) {
+        document.documentElement.dataset.themeChoice = "system";
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="256x256" href="../assets/favicon.png?v=20260429">
-  <link rel="shortcut icon" type="image/png" href="../assets/favicon.png?v=20260429">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="256x256" href="../assets/my-notion-face-transparent.png?v=20260429">
+  <link rel="shortcut icon" type="image/png" href="../assets/my-notion-face-transparent.png?v=20260429">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png?v=20260429">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png?v=20260429">
-  <link rel="stylesheet" href="../styles.css?v=20260510-full-pass">
-  <script src="../script.js?v=20260510-full-pass" defer></script>
+  <link rel="stylesheet" href="../styles.css?v=20260429-2">
+  <script src="../script.js?v=20260429-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -29,10 +56,19 @@
     <nav class="site-nav" aria-label="Primary">
       <a href="../index.html#bio">About</a>
       <a href="../index.html#research">Research</a>
-      <a href="../index.html#publications">Publications</a>
-      <a href="../index.html#cv">CV</a>
       <a href="../index.html#service">Service</a>
       <a class="active" href="../index.html#blog" aria-current="page">Blog</a>
+      <div class="theme-switcher" role="group" aria-label="Color theme">
+        <button class="theme-option" data-theme-choice="light" type="button" aria-pressed="false" aria-label="Light theme" title="Light">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+        <button class="theme-option" data-theme-choice="dark" type="button" aria-pressed="false" aria-label="Dark theme" title="Dark">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button class="theme-option" data-theme-choice="system" type="button" aria-pressed="false" aria-label="System theme" title="System">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+        </button>
+      </div>
     </nav>
 
     <main id="main">
