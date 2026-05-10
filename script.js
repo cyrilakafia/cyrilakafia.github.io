@@ -1,22 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const siteNav = document.querySelector(".site-nav");
+  const root = document.documentElement;
+  const themeOptions = Array.from(document.querySelectorAll(".theme-option"));
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
   const tabGroups = document.querySelectorAll(".tabs");
   const pageLinks = Array.from(document.querySelectorAll(".page-link[data-page]"));
   const pages = Array.from(document.querySelectorAll(".page[data-page]"));
   const postList = document.querySelector("[data-post-list]");
   const markdownPost = document.querySelector("[data-markdown-post]");
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const validThemeChoices = new Set(["light", "dark", "system"]);
   const pageAliases = new Map([
     ["", "bio"],
     ["bio", "bio"],
     ["updates", "bio"],
-    ["cv", "bio"],
     ["resume", "bio"],
     ["vitae", "bio"],
     ["research", "research"],
     ["research-projects", "research"],
     ["publications", "research"],
     ["presentations", "research"],
-    ["projects", "research"],
     ["service", "service"],
     ["teaching", "service"],
     ["mentorship", "service"],
@@ -24,33 +26,69 @@ document.addEventListener("DOMContentLoaded", () => {
     ["blog", "blog"],
   ]);
 
-  const updateNavScrollState = () => {
-    if (!siteNav) {
-      return;
-    }
-
-    siteNav.classList.toggle("scrolled", window.scrollY > 4);
-  };
-
-  updateNavScrollState();
-  window.addEventListener("scroll", updateNavScrollState, { passive: true });
-
-  document.querySelectorAll("a[href]").forEach((link) => {
-    const href = link.getAttribute("href");
-    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
-      return;
-    }
-
+  const getSavedThemeChoice = () => {
     try {
-      const url = new URL(href, window.location.href);
-      if ((url.protocol === "http:" || url.protocol === "https:") && url.hostname !== "cyrilakafia.github.io" && url.origin !== window.location.origin) {
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
+      const savedTheme = localStorage.getItem("theme");
+      if (validThemeChoices.has(savedTheme)) {
+        return savedTheme;
       }
     } catch (error) {
-      // Leave malformed URLs untouched.
+      return "system";
     }
+
+    return "system";
+  };
+
+  const resolveTheme = (themeChoice) => {
+    if (themeChoice === "light" || themeChoice === "dark") {
+      return themeChoice;
+    }
+
+    return mediaQuery.matches ? "dark" : "light";
+  };
+
+  const applyThemeChoice = (themeChoice) => {
+    const choice = validThemeChoices.has(themeChoice) ? themeChoice : "system";
+    const resolvedTheme = resolveTheme(choice);
+    root.dataset.themeChoice = choice;
+    root.dataset.theme = resolvedTheme;
+
+    themeOptions.forEach((button) => {
+      const isActive = button.dataset.themeChoice === choice;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    if (themeMeta) {
+      themeMeta.setAttribute("content", resolvedTheme === "dark" ? "#0f1419" : "#ffffff");
+    }
+  };
+
+  applyThemeChoice(getSavedThemeChoice());
+
+  themeOptions.forEach((button) => {
+    button.addEventListener("click", () => {
+      const themeChoice = button.dataset.themeChoice;
+      applyThemeChoice(themeChoice);
+
+      try {
+        localStorage.setItem("theme", themeChoice);
+      } catch (error) {
+        // Ignore storage failures and keep the current session theme.
+      }
+    });
   });
+
+  const handleSystemThemeChange = () => {
+    const currentChoice = root.dataset.themeChoice || "system";
+    if (currentChoice !== "system") {
+      return;
+    }
+
+    applyThemeChoice("system");
+  };
+
+  mediaQuery.addEventListener("change", handleSystemThemeChange);
 
   document.querySelectorAll("[data-email-user][data-email-domain]").forEach((element) => {
     const { emailUser, emailDomain } = element.dataset;
@@ -70,8 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageFromHash = (hash = currentHash()) => {
     return pageAliases.get(hash) || "bio";
   };
-
-  const linkHash = (link) => link.hash.replace(/^#/, "");
 
   const scrollToHash = (hash) => {
     if (!hash) {
@@ -98,16 +134,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const setActivePage = (pageName, options = {}) => {
     const { updateHash = true, hash = pageName, scroll = false } = options;
-    const targetHash = hash || pageName;
-    const nextPage = pageAliases.get(pageName) || pageAliases.get(targetHash) || "bio";
-    const hasExactNavLink = pageLinks.some((link) => linkHash(link) === targetHash);
+    const nextPage = pageAliases.get(pageName) || "bio";
 
     pages.forEach((page) => {
       page.classList.toggle("active", page.dataset.page === nextPage);
     });
 
     pageLinks.forEach((link) => {
-      const isActive = linkHash(link) === targetHash || (!hasExactNavLink && link.dataset.page === nextPage);
+      const isActive = link.dataset.page === nextPage;
       link.classList.toggle("active", isActive);
       if (isActive) {
         link.setAttribute("aria-current", "page");
@@ -123,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const nextHash = `#${targetHash || nextPage}`;
+    const nextHash = `#${hash || nextPage}`;
     if (window.location.hash !== nextHash) {
       history.pushState({ page: nextPage }, "", nextHash);
     }
@@ -136,8 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
   pageLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      const hash = linkHash(link) || link.dataset.page;
-      setActivePage(link.dataset.page, { hash, scroll: true });
+      setActivePage(link.dataset.page, { hash: link.dataset.page, scroll: false });
     });
   });
 
