@@ -16,6 +16,8 @@
   --yale-soft: rgba(0, 53, 107, 0.28);
   --washu: #a51417;
   --washu-soft: rgba(165, 20, 23, 0.28);
+  --ghana: #146b3a;
+  --ghana-soft: rgba(20, 107, 58, 0.28);
   --brand-github: #181717;
   --brand-linkedin: #0a66c2;
   --brand-scholar: #4285f4;
@@ -51,6 +53,8 @@ html[data-theme="dark"] {
   --yale-soft: rgba(111, 177, 230, 0.32);
   --washu: #ec8d90;
   --washu-soft: rgba(236, 141, 144, 0.32);
+  --ghana: #8bd5a7;
+  --ghana-soft: rgba(139, 213, 167, 0.32);
   --brand-github: #f0f6fc;
 }
 
@@ -249,6 +253,11 @@ h2::before {
 .affiliation--washu {
   --affil: var(--washu);
   --affil-soft: var(--washu-soft);
+}
+
+.affiliation--ghana {
+  --affil: var(--ghana);
+  --affil-soft: var(--ghana-soft);
 }
 
 .social-links,
