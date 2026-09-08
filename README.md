@@ -7,6 +7,7 @@ Files you edit:
 - `index.html`
 - `styles.css`
 - `script.js`
+- `research/closed-loop-ultrasound.html` placeholder page for the closed-loop ultrasound research card
 - `posts/post.html` reusable blog post template
 - `posts/*.md` Markdown source files for blog posts
 - `posts/posts.json` ordered list of blog post slugs
